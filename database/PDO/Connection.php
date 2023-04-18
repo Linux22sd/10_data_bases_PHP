@@ -1,6 +1,6 @@
 <?php
 
-namespace Dtabase\PDO;
+namespace Database\PDO;
 
 class Connection {
 
@@ -17,7 +17,7 @@ class Connection {
         }
         return self::$instance;
     }
-    private function get_database_instance(){
+    public function get_database_instance(){
         return $this->connection;
     }
 

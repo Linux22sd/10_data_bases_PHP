@@ -19,11 +19,26 @@ class IncomesController{
 
     //------------------------------------------------------------------------------------------------------------
     // store - Store a newly created resource in storage.
-    public function store($data){
+    public function store($datos){
         $connection = Connection::get_instance()->get_connection();
 
-        $stmt= $connection->prepare("INSERT INTO incomes (payment_method, type, date, amount, description) 
-            VALUES(?,?,?,?,?);");
+        
+        //Usando query no muy seguro
+        $connection->query("INSERT INTO incomes(payment_method, type, date, amount, description)VALUES(
+            {$datos['payment_method']},
+            {$datos['type']},
+            '{$datos['date']}',
+            {$datos['amount']},
+            '{$datos['description']}'
+            )");
+
+        echo "Se han insertado una fila en la base de datos";
+
+
+
+        /*
+        // Usando PREPARE mas seguro
+        $stmt= $connection->prepare("INSERT INTO incomes (payment_method, type, date, amount, description) VALUES(?,?,?,?,?);");
 
         $stmt->bind_param("iisds", $payment_method, $type, $date, $amount, $description);
 
@@ -35,11 +50,10 @@ class IncomesController{
 
         $stmt->execute();
 
-        echo "Se han insertado {$stmt->affected_rows} filas en la base de datos";
+        echo "Se han insertado {$stmt->affected_rows} fila en la base de datos";
+        */
 
     }
-
-   
     //------------------------------------------------------------------------------------------------------------
     // show - Display the specified resource.
     public function show(){

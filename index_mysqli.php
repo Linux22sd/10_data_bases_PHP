@@ -1,5 +1,4 @@
 <?php
-
 use App\Controllers\IncomesController;
 use App\Enums\PaymentMethodEnum;
 use App\Enums\IncomeTypeEnum;
