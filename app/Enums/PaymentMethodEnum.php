@@ -6,6 +6,7 @@ enum PaymentMethodEnum : int {
 
     case CreditCard = 1;
     case BankAcount = 2;
+    case Deposit = 3;
 
 }
 

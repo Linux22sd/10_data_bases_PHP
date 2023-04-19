@@ -6,24 +6,23 @@ use Database\MySQLi\Connection;
 class IncomesController{
 
     //------------------------------------------------------------------------------------------------------------
-    // index - Display a listing of the resource.
+    // index   - Muestra la lista de este recurso (el recurso puede ser una tabla).
     public function index(){
 
     }
 
     //------------------------------------------------------------------------------------------------------------
-    // create - Show the form for creating a new resource.
+    // create  - Muestra un formularioa para poder crear un recurso.
     public function create(){
         
     }
 
     //------------------------------------------------------------------------------------------------------------
-    // store - Store a newly created resource in storage.
+    // store   - Guarda un nuevo recurso en base de datos.
     public function store($datos){
         $connection = Connection::get_instance()->get_connection();
-
         
-        //Usando query no muy seguro
+        //Usando query no muy seguro ya que puede ser inyectado
         $connection->query("INSERT INTO incomes(payment_method, type, date, amount, description)VALUES(
             {$datos['payment_method']},
             {$datos['type']},
@@ -34,11 +33,10 @@ class IncomesController{
 
         echo "Se han insertado una fila en la base de datos";
 
-
-
         /*
-        // Usando PREPARE mas seguro
-        $stmt= $connection->prepare("INSERT INTO incomes (payment_method, type, date, amount, description) VALUES(?,?,?,?,?);");
+        // Usando prepare mas seguro
+        $stmt= $connection->prepare("INSERT INTO incomes (payment_method, type, date, amount, description) 
+            VALUES(?,?,?,?,?);");
 
         $stmt->bind_param("iisds", $payment_method, $type, $date, $amount, $description);
 
@@ -55,25 +53,25 @@ class IncomesController{
 
     }
     //------------------------------------------------------------------------------------------------------------
-    // show - Display the specified resource.
+    // show    - Muestra un  recurso especifico.
     public function show(){
         
     }
 
     //------------------------------------------------------------------------------------------------------------
-    // edit - Show the form for editing the specified resource.
+    // edit    - Mostrar un formulario grfico para editar un recurso o registro.
     public function edit(){
         
     }
 
     //------------------------------------------------------------------------------------------------------------
-    // update - Update the specified resource in storage.
+    // update  - Actualizar el registro pero ya dentro de la base de datos.
     public function update(){
         
     }
 
     //------------------------------------------------------------------------------------------------------------
-    // destroy - Remove the specified resource from storage.
+    // destroy - Eliminar registro.
     public function destroy(){
         
     }
@@ -82,13 +80,13 @@ class IncomesController{
 
 /*
 
-index - Display a listing of the resource.
-create - Show the form for creating a new resource.
-store - Store a newly created resource in storage.
-show - Display the specified resource.
-edit - Show the form for editing the specified resource.
-update - Update the specified resource in storage.
-destroy - Remove the specified resource from storage.
+index   - Muestra la lista de este recurso (el recurso puede ser una tabla).
+create  - Muestra un formularioa para poder crear un recurso.
+store   - Guarda un nuevo recurso en base de datos.
+show    - Muestra un  recurso especifico.
+edit    - Mostrar un formulario grfico para editar un recurso o registro.
+update  - Actualizar el registro pero ya dentro de la base de datos.
+destroy - Eliminar registro.
 
 */
 ?>
