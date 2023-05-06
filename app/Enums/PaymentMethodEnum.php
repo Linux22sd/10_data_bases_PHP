@@ -5,8 +5,9 @@ namespace App\Enums;
 enum PaymentMethodEnum : int {
 
     case CreditCard = 1;
-    case BankAcount = 2;
-    case Deposit = 3;
+    case Check = 2;
+    case Cash = 3;
+    
 
 }
 

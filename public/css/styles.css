@@ -1,0 +1,155 @@
+
+:root{
+    --color-claro:#FFFFFF;
+    --color-obscuro:#00171F;
+    --color-primario:#003459;
+    --color-secundario:#007EA7;
+    --color-terceario:#00A8E8;
+}
+
+
+/* Todos los archivos */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:
+    border-box
+}
+body{
+    background-color: var(--color-secundario); 
+    font-family:Arial,Helvetica,sans-serif
+}
+
+h1{
+    background-color: var(--color-primario);
+    color:var(--color-claro);
+    text-align:center;
+    padding:10px 0;
+    margin-bottom: 10px
+}
+
+.header_menu{
+    margin-bottom: 50px;
+}
+
+.btns_mnu_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+
+/* menu_incomes */
+.btns_mnus{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.form_btn_ctn{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 337px;
+    height: 99px;
+   
+}
+
+.form_btn_ctn{
+    border-collapse: collapse;
+}
+
+.form_btn{
+    background-color: var(--color-terceario);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--color-primario);
+}
+
+.form_btn input{
+    font-size: 18px;
+    width: 50px;
+    height: 35px;
+    text-align: center;
+}
+
+.form_btn label{
+    font-size: 24px;
+}
+
+
+/* tabla */
+table{
+    width:95%;
+    margin-bottom:30px;
+}
+th{
+    padding:10px 5px 10px 5px;
+    background:#464646; 
+    color:var(--color-claro);
+}
+td{
+    text-align: center;
+    padding:10px;
+}
+tr{
+    background:#4789a0;
+}
+tr:nth-child(even){
+    background:#e8e8e8
+}
+table{
+    margin: auto;
+} 
+table, th, td{
+    border:1px solid #000;
+    border-collapse:collapse;
+}
+
+
+/* form */
+.input-group{
+    display:flex;
+    flex-direction:column;
+    margin-bottom:20px;
+    padding: 0px 15px 0px 15px;
+}
+.row{
+    margin: 10px;
+}
+.row label{
+    margin-bottom:5px;
+    font-weight:700
+}
+textarea{
+    min-width:100%;
+    max-width:100%;
+    min-height:150px;
+    font-family:Arial,Helvetica,sans-serif
+}
+.btn_agregar{
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    background-color: #003459;
+    font-size: 16px;
+    color: var(--color-claro);
+    font-weight: 700;
+}
+.input-group input,.input-group select,.input-group textarea{
+    padding:8px 6px;
+    width:100%;
+    background-color: var(--color-claro);
+}
+
+h2{
+    text-align: center;
+}
+

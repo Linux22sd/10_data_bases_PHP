@@ -6,6 +6,7 @@ enum IncomeTypeEnum : int {
 
     case Salary = 1;
     case Refund = 2;
+    case Deposit = 3;
 
 }
 ?>
